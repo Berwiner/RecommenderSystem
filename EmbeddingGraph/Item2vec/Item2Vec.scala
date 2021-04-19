@@ -13,7 +13,7 @@ import scopt.OptionParser
 import java.io.{BufferedWriter, File, FileWriter}
 
 object Item2Vec {
-  /** create by liubowen 2021/04/15
+  /** create by berwin 2021/04/15
    *
    * @param input_pt     hdfs数据路径
    * @param timeName     时间戳列名
@@ -22,7 +22,8 @@ object Item2Vec {
    * @param filter       过滤条件  没有则为""   按照spark sql规范  如 "a >= 0.3"
    * @param embLength    Word2vec中的生成embedding隐向量维度 默认值为8
    * @param windowsSise  Word2vec中的滑动窗口的长度 默认值为5
-
+   * @param output_pt    输出路径
+   
    * function:
    *          对行为序列做item2vec，生成序列中各个物品的embedding
    *
@@ -63,14 +64,14 @@ object Item2Vec {
 //    }
     Logger.getLogger("org").setLevel(Level.ERROR)
 
-    val input_pt = "/Users/liu_bowen/Desktop/Trusfort/周报/SparkDemo/src/main/scala/Easyml/GraphEmbedding/ratings.csv"
+    val input_pt = "xxxxxx/ratings.csv"
     val timeName = "timestamp"
     val itemName = "movieId"
     val userName = "userId"
     val filter = "rating>3.5"
     val embLength = 16
     val windowsSise = 5
-    val output_pt = "/Users/liu_bowen/Desktop/Trusfort/周报/SparkDemo/src/main/scala/Easyml/GraphEmbedding/"
+    val output_pt = "xxxx/GraphEmbedding/"
 //
 
 
